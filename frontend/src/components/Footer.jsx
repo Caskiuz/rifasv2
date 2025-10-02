@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Columna marca */}
         <div className="flex flex-col gap-3">
           <div className="text-3xl font-extrabold text-white" style={{fontFamily:'Rubik, ui-sans-serif, system-ui'}}>Rifatela</div>
-          <div className="text-sm opacity-90">Sistema de Rifas Online</div>
+          <div className="text-sm opacity-100 text-white">Sistema de Rifas Online</div>
           <div>
             <a href="https://facebook.com" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white text-[#0d2a4d] shadow-sm" aria-label="Facebook">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>

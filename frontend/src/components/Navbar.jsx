@@ -172,9 +172,9 @@ export default function Navbar({ user, setUser }) {
 
     {/* Overlay/panel móvil global */}
     {isMenuOpen && createPortal((
-      <div className="fixed inset-0 z-[6000]" style={{pointerEvents:'auto'}}>
+      <div className="fixed inset-0 menu-overlay" style={{pointerEvents:'auto', zIndex: 9999}}>
         <div className="absolute inset-0 bg-black/40" onClick={() => setIsMenuOpen(false)} />
-        <aside id="mobile-menu-panel" className="absolute right-0 top-0 h-full w-[360px] max-w-[85vw] bg-white shadow-2xl p-6 overflow-y-auto" role="menu" aria-label="Menú móvil">
+        <aside id="mobile-menu-panel" className="absolute right-0 top-0 h-full w-[360px] max-w-[85vw] bg-white shadow-2xl p-6 overflow-y-auto" role="menu" aria-label="Menú móvil" style={{transform:'translateX(0)'}}>
           <div className="flex items-center justify-between mb-4">
             <img src="/logo-rifatela.svg" alt="Rifatela Logo" className="h-10" />
             <button onClick={() => setIsMenuOpen(false)} className="w-10 h-10 inline-flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50" aria-label="Cerrar">

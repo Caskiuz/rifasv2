@@ -643,6 +643,7 @@ nav ul > li > a:hover, nav ul > li > button:hover {
   color: #fff;
   text-decoration: underline;
 }
+.footer a, .footer h5, footer a, footer h5, footer li, footer p { color: #ffffff !important; }
 .rifarito-footer__copy {
   font-family: 'Nunito', Arial, sans-serif;
   font-size: 0.98rem;
