@@ -150,7 +150,7 @@ export default function Navbar({ user, setUser }) {
         {user && <button className="bg-red-500 text-white px-5 py-2 rounded font-semibold ml-2" onClick={() => { setUser(null); }}>Cerrar sesión</button>}
 
         {/* Hamburguesa */}
-        <button onClick={() => setIsMenuOpen(v => !v)} onTouchStart={() => setIsMenuOpen(v => !v)}
+        <button type="button" onClick={() => setIsMenuOpen(v => !v)}
           className="nav-menu-mobile-toggle inline-flex items-center justify-center w-11 h-11 rounded-md border border-gray-200 text-[#3b3f7a] hover:text-[#2b3166] hover:bg-gray-50 transition"
           title="Menú" aria-label="Menú" aria-haspopup="menu" aria-expanded={isMenuOpen} aria-controls="mobile-menu-panel"
           style={{touchAction:'manipulation', zIndex: 7000, pointerEvents: 'auto'}}>
