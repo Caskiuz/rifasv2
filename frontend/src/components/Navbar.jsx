@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar({ user, setUser }) {
@@ -152,13 +153,26 @@ export default function Navbar({ user, setUser }) {
       </div>
     </nav>
     {/* Botón flotante centrado inferior (solo móvil) */}
-    <button type="button" className="floating-menu-btn" aria-label="Abrir menú" aria-haspopup="menu" aria-expanded={isMenuOpen} aria-controls="mobile-menu-panel" onClick={() => setIsMenuOpen(v => !v)}>
-      <svg width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2.4" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+    <button
+      type="button"
+      className={`floating-menu-btn ${isMenuOpen ? 'is-open' : ''}`}
+      aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+      aria-haspopup="menu"
+      aria-expanded={isMenuOpen}
+      aria-controls="mobile-menu-panel"
+      onClick={() => setIsMenuOpen(v => !v)}
+      style={{ pointerEvents: 'auto' }}
+    >
+      {isMenuOpen ? (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      ) : (
+        <svg width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2.4" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      )}
     </button>
 
     {/* Overlay/panel móvil global */}
-    {isMenuOpen && (
-      <div className="fixed inset-0 z-[6000]">
+    {isMenuOpen && createPortal((
+      <div className="fixed inset-0 z-[6000]" style={{pointerEvents:'auto'}}>
         <div className="absolute inset-0 bg-black/40" onClick={() => setIsMenuOpen(false)} />
         <aside id="mobile-menu-panel" className="absolute right-0 top-0 h-full w-[360px] max-w-[85vw] bg-white shadow-2xl p-6 overflow-y-auto" role="menu" aria-label="Menú móvil">
           <div className="flex items-center justify-between mb-4">
@@ -251,7 +265,7 @@ export default function Navbar({ user, setUser }) {
           </nav>
         </aside>
       </div>
-    )}
+    ), document.body)}
     </>
   );
 }

@@ -494,7 +494,8 @@ nav ul > li > a:hover, nav ul > li > button:hover {
   justify-content: center;
   box-shadow: 0 12px 32px rgba(13,42,77,0.25);
   border: none;
-  z-index: 6500;
+  z-index: 7001;
+  cursor: pointer;
 }
 .floating-menu-btn::after {
   content: '';
@@ -505,6 +506,8 @@ nav ul > li > a:hover, nav ul > li > button:hover {
   animation: pulse-ring 1.8s ease-out infinite;
   z-index: -1;
 }
+/* Estado abierto: menos pulso para evitar distracción y tono más oscuro */
+.floating-menu-btn.is-open::after { animation: none; }
 @keyframes pulse-ring {
   0%   { transform: scale(0.9); opacity: 0.75; }
   70%  { transform: scale(1.15); opacity: 0; }
