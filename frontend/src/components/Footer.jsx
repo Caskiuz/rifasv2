@@ -3,7 +3,7 @@ import React from 'react';
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-[#0d2a4d] text-[#e3f0ff]">
+  <footer className="bg-[#0d2a4d] text-white">
       <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Columna marca */}
         <div className="flex flex-col gap-3">
@@ -20,47 +20,47 @@ export default function Footer() {
 
         {/* Columna Plataforma */}
         <div>
-          <h5 className="text-sm font-extrabold tracking-wide uppercase text-[#9fb7d1] mb-3">Plataforma</h5>
-          <ul className="space-y-2 text-sm">
-            <li><a className="hover:underline" href="/preguntas-frecuentes">Preguntas Frecuentes</a></li>
-            <li><a className="hover:underline" href="/crear-pagina">Solicitud para crear una Página</a></li>
-            <li><a className="hover:underline" href="/clientes">Nuestros Clientes</a></li>
-            <li><a className="hover:underline" href="/demos">Demos Disponibles</a></li>
-            <li><a className="hover:underline" href="/testimonios">Comentarios</a></li>
-            <li><a className="hover:underline" href="/centro-ayuda">Centro de Ayuda</a></li>
+          <h5 className="text-sm font-extrabold tracking-wide uppercase text-white/80 mb-3">Plataforma</h5>
+          <ul className="space-y-2 text-sm text-white">
+            <li><a className="hover:underline text-white" href="/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+            <li><a className="hover:underline text-white" href="/crear-pagina">Solicitud para crear una Página</a></li>
+            <li><a className="hover:underline text-white" href="/clientes">Nuestros Clientes</a></li>
+            <li><a className="hover:underline text-white" href="/demos">Demos Disponibles</a></li>
+            <li><a className="hover:underline text-white" href="/testimonios">Comentarios</a></li>
+            <li><a className="hover:underline text-white" href="/centro-ayuda">Centro de Ayuda</a></li>
           </ul>
         </div>
 
         {/* Columna Sistema */}
         <div>
-          <h5 className="text-sm font-extrabold tracking-wide uppercase text-[#9fb7d1] mb-3">Sistema</h5>
-          <ul className="space-y-2 text-sm">
-            <li><a className="hover:underline" href="/sistema">Sistema</a></li>
-            <li><a className="hover:underline" href="/beneficios">Beneficios</a></li>
-            <li><a className="hover:underline" href="/configuraciones">Configuraciones</a></li>
-            <li><a className="hover:underline" href="/precios">Precios</a></li>
-            <li><a className="hover:underline" href="/precios">Premium</a></li>
+          <h5 className="text-sm font-extrabold tracking-wide uppercase text-white/80 mb-3">Sistema</h5>
+          <ul className="space-y-2 text-sm text-white">
+            <li><a className="hover:underline text-white" href="/sistema">Sistema</a></li>
+            <li><a className="hover:underline text-white" href="/beneficios">Beneficios</a></li>
+            <li><a className="hover:underline text-white" href="/configuraciones">Configuraciones</a></li>
+            <li><a className="hover:underline text-white" href="/precios">Precios</a></li>
+            <li><a className="hover:underline text-white" href="/precios">Premium</a></li>
           </ul>
         </div>
 
         {/* Columna Empresa */}
         <div>
-          <h5 className="text-sm font-extrabold tracking-wide uppercase text-[#9fb7d1] mb-3">Empresa</h5>
-          <ul className="space-y-2 text-sm">
-            <li><a className="hover:underline" href="/acerca">Acerca de Rifatela</a></li>
-            <li><a className="hover:underline" href="/contacto">Contacto</a></li>
-            <li><a className="hover:underline" href="/terminos">Términos y Condiciones</a></li>
-            <li><a className="hover:underline" href="/precios" aria-disabled="true" title="Próximamente">Política de Reembolso</a></li>
-            <li><a className="underline hover:no-underline" href="/privacidad">Política de Privacidad</a></li>
-            <li><a className="hover:underline" href="/precios" aria-disabled="true" title="Próximamente">Renuncia de Responsabilidad</a></li>
-            <li><a className="hover:underline" href="/centro-ayuda">Reportar Página</a></li>
+          <h5 className="text-sm font-extrabold tracking-wide uppercase text-white/80 mb-3">Empresa</h5>
+          <ul className="space-y-2 text-sm text-white">
+            <li><a className="hover:underline text-white" href="/acerca">Acerca de Rifatela</a></li>
+            <li><a className="hover:underline text-white" href="/contacto">Contacto</a></li>
+            <li><a className="hover:underline text-white" href="/terminos">Términos y Condiciones</a></li>
+            <li><a className="hover:underline text-white" href="/precios" aria-disabled="true" title="Próximamente">Política de Reembolso</a></li>
+            <li><a className="underline hover:no-underline text-white" href="/privacidad">Política de Privacidad</a></li>
+            <li><a className="hover:underline text-white" href="/precios" aria-disabled="true" title="Próximamente">Renuncia de Responsabilidad</a></li>
+            <li><a className="hover:underline text-white" href="/centro-ayuda">Reportar Página</a></li>
           </ul>
         </div>
       </div>
 
       {/* Copy centrado */}
       <div className="max-w-6xl mx-auto px-6 pb-8">
-        <div className="text-center text-xs text-[#9fb7d1]">© {year} Rifatela™. Todos los derechos reservados.</div>
+        <div className="text-center text-xs text-white/80">© {year} Rifatela™. Todos los derechos reservados.</div>
       </div>
     </footer>
   );

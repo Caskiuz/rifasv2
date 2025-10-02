@@ -184,13 +184,14 @@ export default function Navbar({ user, setUser }) {
         )}
 
         {/* Hamburguesa */}
-        <button onClick={() => setIsMenuOpen(true)} className="nav-menu-mobile-toggle inline-flex items-center justify-center w-11 h-11 rounded-md border border-gray-200 text-[#3b3f7a] hover:text-[#2b3166] hover:bg-gray-50 transition" title="Menú" aria-label="Menú" aria-haspopup="menu" aria-expanded={isMenuOpen}>
+        <button onClick={() => setIsMenuOpen(v => !v)} className="nav-menu-mobile-toggle inline-flex items-center justify-center w-11 h-11 rounded-md border border-gray-200 text-[#3b3f7a] hover:text-[#2b3166] hover:bg-gray-50 transition" title="Menú" aria-label="Menú" aria-haspopup="menu" aria-expanded={isMenuOpen}
+          style={{touchAction:'manipulation'}}>
           <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
         </button>
         {isMenuOpen && (
           <div className="fixed inset-0 z-[6000]">
             <div className="absolute inset-0 bg-black/40" onClick={() => setIsMenuOpen(false)} />
-            <aside className="absolute right-0 top-0 h-full w-[360px] max-w-[85vw] bg-white shadow-2xl p-6 overflow-y-auto">
+            <aside className="absolute right-0 top-0 h-full w-[360px] max-w-[85vw] bg-white shadow-2xl p-6 overflow-y-auto" role="menu" aria-label="Menú móvil">
               <div className="flex items-center justify-between mb-4">
                 <img src="/logo-rifatela.svg" alt="Rifatela Logo" className="h-10" />
                 <button onClick={() => setIsMenuOpen(false)} className="w-10 h-10 inline-flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50" aria-label="Cerrar">

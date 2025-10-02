@@ -431,7 +431,12 @@ details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
 
 /* Evitar desplazamiento horizontal accidental */
+/* Guardarraíl: evitar desplazamiento horizontal en cualquier vista */
 body { overflow-x: hidden; }
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, canvas, video { max-width: 100%; height: auto; }
+/* Evitar que cualquier sección fuerce más de 100vw */
+section, header, footer, nav, main, aside, .container, .wrapper { max-width: 100vw; overflow-x: clip; }
 
 /* Navbar sólido y elementos de texto planos (sin fondo/bordes) */
 nav { background: #fff; }

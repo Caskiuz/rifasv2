@@ -5,9 +5,9 @@ import "../styles/beneficios.css";
 export default function BeneficiosBienvenida() {
   return (
   <section className="rifarito-beneficios-bienvenida-bg" id="beneficios">
-      <div className="rifarito-beneficios-bienvenida__container" style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
+    <div className="rifarito-beneficios-bienvenida__container">
         {/* Cuadros de beneficios (lado izquierdo) */}
-        <div className="rifarito-beneficios-grid" style={{flex:'1 1 0%'}}>
+  <div className="rifarito-beneficios-grid">
           <Link to="/beneficios#sin-comisiones" id="sin-comisiones" className="rifarito-beneficio-card rifarito-beneficio-card--azul anchor-target" style={{textDecoration:'none'}}>
             <div className="rifarito-beneficio-card__icon">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -78,7 +78,7 @@ export default function BeneficiosBienvenida() {
           </Link>
         </div>
         {/* Bienvenida (lado derecho) y Apple Watch */}
-        <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', flex:'1 1 0%', gap:'24px'}}>
+  <div>
           <div className="rifarito-bienvenida-box">
             <div className="rifarito-bienvenida-label">BIENVENIDO</div>
             <div className="rifarito-bienvenida-title">
