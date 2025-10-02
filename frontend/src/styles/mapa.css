@@ -1,0 +1,49 @@
+/* Estilos de la sección Mapa */
+.rifarito-mapa-bg {
+  width: 100%;
+  background: #fff;
+  padding: 24px 0 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.rifarito-mapa-img { width: 100%; height: auto; display: block; user-select: none; -webkit-user-drag: none; }
+
+.rifarito-mapa-dot { position: relative; }
+.rifarito-mapa-dot-outer { position: absolute; inset: 0; border-radius: 50%; background: rgba(14,165,233,0.22); animation: ping 1.8s ease-out infinite; }
+.rifarito-mapa-dot-inner { position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; transform: translate(-50%,-50%); background: #0ea5e9; border-radius: 50%; box-shadow: 0 0 0 4px rgba(14,165,233,0.15); }
+
+.rifarito-mapa-dot-tooltip {
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  transform: translate(-50%, -100%);
+  background: #153e75;
+  color: #fff;
+  font-family: 'Rubik', Arial, sans-serif;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.rifarito-mapa-dot:hover .rifarito-mapa-dot-tooltip { opacity: 1; }
+
+@keyframes ping {
+  0% { transform: scale(0.85); opacity: 0.7; }
+  70% { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Evitar que otras secciones se sobrepongan visualmente */
+.rifarito-mapa__container { isolation: isolate; }
+
+/* Correcciones responsive simples para mantener el punto relativo en pantallas chicas */
+@media (max-width: 768px) {
+  .rifarito-mapa-dot { width: 36px !important; height: 36px !important; }
+  .rifarito-mapa-dot-inner { width: 10px; height: 10px; }
+  .rifarito-mapa-dot-tooltip { font-size: 0.8rem; }
+}

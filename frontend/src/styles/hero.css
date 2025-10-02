@@ -1,0 +1,120 @@
+/* Estilos del Hero (clon fiel rifarito) */
+.rifarito-hero {
+  width: 100%;
+  min-height: 600px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #e3eaf3;
+}
+
+.rifarito-hero__container { max-width: 1100px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 32px; gap: 16px 0; }
+
+.rifarito-hero__left {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.rifarito-hero__title {
+  font-family: 'Rubik', 'Nunito', Arial, sans-serif;
+  font-size: 4.6rem;
+  font-weight: 800;
+  color: #1a5d87;
+  line-height: 1.02;
+  margin-bottom: 0.2em;
+  letter-spacing: -1px;
+}
+
+.rifarito-hero__title-underline {
+  display: block;
+  width: 360px;
+  height: 24px;
+  margin-top: -24px;
+  margin-bottom: 16px;
+}
+
+.rifarito-hero__desc {
+  font-size: 1.45rem;
+  color: #1a5d87;
+  font-family: 'Nunito', Arial, sans-serif;
+  margin-bottom: 1.5em;
+  font-weight: 400;
+  max-width: 640px;
+}
+
+.rifarito-hero__actions {
+  display: flex;
+  gap: 18px;
+}
+
+.rifarito-hero__mockups { display: none; }
+
+.rifarito-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 120%;
+  height: auto;
+  left: -10%;
+  top: -10%;
+  z-index: 0;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.rifarito-hero__phone {
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 16px 48px rgba(21,62,117,0.18);
+  border-radius: 28px;
+  background: #fff;
+}
+
+.rifarito-hero__phone--front { /* teléfono izquierdo, por delante */
+  width: 340px;
+  transform: rotate(-12deg);
+  left: 58%;
+  top: -40px;
+  z-index: 2;
+}
+
+.rifarito-hero__phone--back { /* teléfono derecho, detrás */
+  width: 300px;
+  transform: rotate(14deg);
+  left: 73%;
+  top: 120px;
+  opacity: 0.98;
+}
+
+/* Swoosh curvo (decoración) */
+.rifarito-hero__swoosh-left {
+  position: absolute;
+  left: -40px;
+  top: -30px;
+  width: 520px;
+  height: 160px;
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 1100px) {
+  .rifarito-hero__phone--front { width: 280px; left: 56%; top: -10px; }
+  .rifarito-hero__phone--back  { width: 240px; left: 70%; top: 120px; }
+}
+
+@media (max-width: 900px) {
+  .rifarito-hero__container { flex-direction: column; align-items: center; padding: 0 12px; gap: 32px 0; }
+  .rifarito-hero__left { align-items: center; text-align: center; }
+  .rifarito-hero__title { font-size: 2.6rem; line-height: 1.08; }
+  .rifarito-hero__mockups { min-height: 340px; }
+  .rifarito-hero__phone--front { width: 220px; left: 52%; top: 10px; }
+  .rifarito-hero__phone--back  { width: 190px; left: 68%; top: 120px; }
+}
+/* Eliminados estilos de mockups cuando el hero es sólo textual */

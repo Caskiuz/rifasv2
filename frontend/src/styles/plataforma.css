@@ -1,0 +1,20 @@
+/* Estilos de la sección Plataforma */
+.rifarito-plataforma-bg { width: 100%; background: #f7fbff; border-bottom: 1px solid #e3eaf3; }
+.rifarito-plataforma__container { max-width: 1200px; margin: 0 auto; padding: 64px 32px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 32px; }
+
+.rifarito-plataforma__left { display: flex; flex-direction: column; justify-content: center; }
+.rifarito-plataforma-label { font-family: 'Rubik', Arial, sans-serif; font-size: 0.9rem; color: #0ea5e9; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px; }
+.rifarito-plataforma-title { font-family: 'Rubik', Arial, sans-serif; font-size: 2.2rem; font-weight: 800; color: #153e75; margin-bottom: 12px; }
+.rifarito-plataforma-title__underline { background: linear-gradient(90deg, #7ec3f7, #a7e8ff); border-radius: 8px; padding: 0 8px; }
+.rifarito-plataforma-desc { font-family: 'Nunito', Arial, sans-serif; font-size: 1.08rem; color: #1a5d87; opacity: 0.95; margin-bottom: 18px; }
+/* Bloque Trustpilot eliminado */
+
+.rifarito-plataforma__right { display: flex; align-items: center; justify-content: center; }
+.rifarito-plataforma-demoimg { width: 100%; max-width: 700px; height: auto; border-radius: 18px; box-shadow: 0 10px 40px rgba(31,38,135,0.15); }
+
+@media (max-width: 900px) {
+  .rifarito-plataforma__container { grid-template-columns: 1fr; padding: 40px 12px; }
+  .rifarito-plataforma__left { order: 2; }
+  .rifarito-plataforma__right { order: 1; }
+  .rifarito-plataforma-demoimg { max-width: 100%; }
+}

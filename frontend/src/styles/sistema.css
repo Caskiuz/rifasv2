@@ -1,0 +1,23 @@
+/* Estilos de la sección Sistema */
+.rifarito-sistema { width: 100%; background: #fff; padding: 64px 0; display: flex; justify-content: center; border-bottom: 1px solid #e3eaf3; }
+.rifarito-sistema__container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; }
+@media (max-width: 900px) { .rifarito-sistema__container { flex-direction: column; align-items: center; gap: 32px 0; padding: 0 12px; } }
+
+.rifarito-sistema__left { flex: 1 1 0%; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.rifarito-sistema__title { font-family: 'Rubik', Arial, sans-serif; font-size: 2.2rem; font-weight: 800; color: #1a5d87; line-height: 1.1; margin-bottom: 0.2em; letter-spacing: -1px; }
+.rifarito-sistema__accordion { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 18px; }
+.rifarito-sistema__panel { background: #fff; border-radius: 18px; box-shadow: 0 2px 16px 0 rgba(31,38,135,0.07); padding: 0; border: none; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
+.rifarito-sistema__panel-header { display: flex; align-items: center; font-family: 'Rubik', Arial, sans-serif; font-size: 1.25rem; font-weight: 700; color: #153e75; padding: 22px 28px; cursor: pointer; border-bottom: 1px solid #eaf1fb; background: #fff; transition: background 0.13s; }
+.rifarito-sistema__panel-header:hover { background: #f7fbff; }
+.rifarito-sistema__panel-header .icon { font-size: 1.3em; margin-right: 16px; color: #0ea5e9; width: 28px; text-align: center; }
+.rifarito-sistema__panel-content { padding: 0 28px 22px 56px; font-family: 'Nunito', Arial, sans-serif; font-size: 1.08rem; color: #1a5d87; background: #fff; animation: fadeInDropdown 0.18s; }
+.rifarito-sistema__panel:not(.open) .rifarito-sistema__panel-content { display: none; }
+.rifarito-sistema__panel.open { box-shadow: 0 8px 40px 0 rgba(31,38,135,0.13); }
+
+/* Mockup lateral */
+.rifarito-sistema__img { position: relative; width: 320px; min-height: 420px; display: flex; align-items: center; justify-content: center; }
+.rifarito-sistema__img img { display: block; height: auto; }
+
+/* Aside eliminado: estilos removidos */
+
+@keyframes fadeInDropdown { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }

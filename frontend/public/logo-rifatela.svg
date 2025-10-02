@@ -1,0 +1,14 @@
+<svg width="294" height="61" viewBox="0 0 294 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <text x="24" y="48" font-family="Rubik, Arial, sans-serif" font-size="40" font-weight="bold" fill="#153e75" letter-spacing="6">RIFA</text>
+    <circle cx="146" cy="34" r="13" fill="#4fc3f7" />
+    <text x="170" y="48" font-family="Rubik, Arial, sans-serif" font-size="40" font-weight="bold" fill="#4fc3f7" letter-spacing="6">TEL</text>
+    <!-- Letra A final personalizada -->
+    <g>
+      <polygon points="258,48 246,8 270,8 282,48" fill="#4fc3f7" />
+      <polygon points="252,32 262,32 257,16" fill="#fff" />
+    </g>
+    <!-- Triángulo de corte de la A -->
+    <polygon points="278,48 282,48 280,40" fill="#fff" />
+  </g>
+</svg>

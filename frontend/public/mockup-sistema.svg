@@ -1,0 +1,8 @@
+<svg width="400" height="180" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="20" width="110" height="140" rx="18" fill="#e3f0ff" stroke="#153e75" stroke-width="3"/>
+  <rect x="250" y="40" width="90" height="90" rx="18" fill="#e3f0ff" stroke="#153e75" stroke-width="3"/>
+  <rect x="70" y="60" width="40" height="60" rx="6" fill="#4fc3f7"/>
+  <rect x="270" y="70" width="50" height="50" rx="8" fill="#4fc3f7"/>
+  <text x="60" y="120" font-family="Rubik, Arial, sans-serif" font-size="16" fill="#153e75">Celular</text>
+  <text x="265" y="110" font-family="Rubik, Arial, sans-serif" font-size="16" fill="#153e75">Reloj</text>
+</svg>

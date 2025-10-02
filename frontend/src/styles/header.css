@@ -1,0 +1,28 @@
+/* Estilos del Header (clon fiel) */
+.rifarito-header { position: sticky; top: 0; z-index: 100; width: 100%; background: #fff; border-bottom: 1px solid #e3eaf3; }
+.rifarito-header__container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 80px; }
+
+.rifarito-header__logo img { height: 48px; width: auto; display: block; }
+.rifarito-header__nav ul { display: flex; align-items: center; gap: 32px; margin: 0; padding: 0; }
+.rifarito-header__nav a { font-family: 'Rubik', 'Nunito', Arial, sans-serif; font-size: 1.13rem; font-weight: 500; color: #1a5d87; padding: 6px 12px; border-radius: 8px; transition: background 0.15s, color 0.15s; }
+.rifarito-header__nav a:hover, .rifarito-header__precios { background: #eaf1fb; color: #0ea5e9; }
+.rifarito-header__precios { border: 2px solid #0ea5e9; font-weight: 700; font-size: 1.13rem; background: #fff; color: #0ea5e9; padding: 6px 18px; border-radius: 8px; margin-left: 8px; }
+
+.rifarito-header__menu { display: none; background: none; border: none; flex-direction: column; gap: 4px; cursor: pointer; }
+.rifarito-header__menu span { display: block; width: 28px; height: 3px; background: #1a5d87; border-radius: 2px; }
+
+.rifarito-header__dropdown { position: absolute; top: 110%; left: 0; min-width: 220px; background: #fff; border-radius: 16px; box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10); padding: 12px 0; z-index: 100; display: block; animation: fadeInDropdown 0.18s; }
+.rifarito-header__dropdown li { width: 100%; }
+.rifarito-header__dropdown a { display: block; width: 100%; padding: 10px 24px; color: #1a5d87; font-family: 'Rubik', Arial, sans-serif; font-size: 1.08rem; border-radius: 8px; transition: background 0.13s, color 0.13s; }
+.rifarito-header__dropdown a:hover { background: #eaf1fb; color: #0ea5e9; }
+
+@media (max-width: 900px) {
+  .rifarito-header__container { padding: 0 12px; }
+  .rifarito-header__nav ul { gap: 16px; }
+}
+@media (max-width: 700px) {
+  .rifarito-header__container { flex-direction: row; height: 64px; }
+  .rifarito-header__logo img { height: 36px; }
+  .rifarito-header__nav ul { display: none; }
+  .rifarito-header__menu { display: flex; }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "crear-primera-rifa",
+    "title": "Crear tu primera rifa",
+    "category": "primeros-pasos",
+    "excerpt": "Configura una rifa con título, precio de boleto y fecha de sorteo.",
+    "content": "Para crear tu primera rifa en Rifatela, ve a Panel > Rifas > Crear rifa. Completa los datos básicos (título, descripción, precio del boleto, fecha del sorteo) y guarda. Luego podrás añadir imágenes, reglas y publicar cuando estés listo."
+  },
+  {
+    "slug": "conectar-stripe",
+    "title": "Conectar Stripe para pagos",
+    "category": "pagos",
+    "excerpt": "Activa pagos con tarjeta conectando tu cuenta de Stripe.",
+    "content": "Abre Configuración > Pagos y haz clic en Conectar con Stripe. Sigue el asistente, verifica tu identidad y elige moneda. Una vez conectado, podrás recibir pagos de forma segura." 
+  },
+  {
+    "slug": "gestionar-boletos",
+    "title": "Gestionar boletos digitales",
+    "category": "rifas",
+    "excerpt": "Cómo ver, filtrar y descargar tus boletos.",
+    "content": "Desde Rifas > [Tu rifa] > Boletos puedes ver el listado, filtrar por estado y descargar reportes. También puedes reenviar comprobantes al comprador desde esta vista." 
+  },
+  {
+    "slug": "recuperar-cuenta",
+    "title": "Recuperar acceso a tu cuenta",
+    "category": "seguridad",
+    "excerpt": "Usa el flujo de restablecimiento de contraseña.",
+    "content": "Si olvidaste tu contraseña, usa la opción Recuperar contraseña en la pantalla de inicio de sesión. Recibirás un correo con un enlace temporal para establecer una nueva clave segura." 
+  },
+  {
+    "slug": "reporte-ventas",
+    "title": "Reporte de ventas y conversiones",
+    "category": "reportes",
+    "excerpt": "Analiza tus ventas por periodo y origen.",
+    "content": "En Reportes puedes filtrar por rangos de fechas, ver conversiones por campaña y exportar a CSV. Usa estos datos para optimizar tus rifas y promociones." 
+  },
+  {
+    "slug": "webhooks-notificaciones",
+    "title": "Webhooks y notificaciones",
+    "category": "integraciones",
+    "excerpt": "Recibe eventos en tu sistema externo.",
+    "content": "Configura un endpoint en Integraciones > Webhooks. Rifatela enviará eventos como pago_confirmado o boleto_emitido para que puedas sincronizar con tus sistemas." 
+  }
+]
