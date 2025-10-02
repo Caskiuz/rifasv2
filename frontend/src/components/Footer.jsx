@@ -26,7 +26,7 @@ export default function Footer() {
             <li><a className="hover:underline" href="/crear-pagina">Solicitud para crear una Página</a></li>
             <li><a className="hover:underline" href="/clientes">Nuestros Clientes</a></li>
             <li><a className="hover:underline" href="/demos">Demos Disponibles</a></li>
-            <li><a className="hover:underline" href="#" aria-disabled="true" title="Próximamente">Comentarios</a></li>
+            <li><a className="hover:underline" href="/testimonios">Comentarios</a></li>
             <li><a className="hover:underline" href="/centro-ayuda">Centro de Ayuda</a></li>
           </ul>
         </div>
@@ -35,11 +35,11 @@ export default function Footer() {
         <div>
           <h5 className="text-sm font-extrabold tracking-wide uppercase text-[#9fb7d1] mb-3">Sistema</h5>
           <ul className="space-y-2 text-sm">
-            <li><a className="hover:underline" href="/demos">Sistema</a></li>
-            <li><a className="hover:underline" href="/acerca">Beneficios</a></li>
-            <li><a className="hover:underline" href="/crear-pagina">Configuraciones</a></li>
+            <li><a className="hover:underline" href="/sistema">Sistema</a></li>
+            <li><a className="hover:underline" href="/beneficios">Beneficios</a></li>
+            <li><a className="hover:underline" href="/configuraciones">Configuraciones</a></li>
             <li><a className="hover:underline" href="/precios">Precios</a></li>
-            <li><a className="hover:underline" href="#" aria-disabled="true" title="Próximamente">Premium</a></li>
+            <li><a className="hover:underline" href="/precios">Premium</a></li>
           </ul>
         </div>
 
@@ -50,10 +50,10 @@ export default function Footer() {
             <li><a className="hover:underline" href="/acerca">Acerca de Rifatela</a></li>
             <li><a className="hover:underline" href="/contacto">Contacto</a></li>
             <li><a className="hover:underline" href="/terminos">Términos y Condiciones</a></li>
-            <li><a className="hover:underline" href="#" aria-disabled="true" title="Próximamente">Política de Reembolso</a></li>
+            <li><a className="hover:underline" href="/precios" aria-disabled="true" title="Próximamente">Política de Reembolso</a></li>
             <li><a className="underline hover:no-underline" href="/privacidad">Política de Privacidad</a></li>
-            <li><a className="hover:underline" href="#" aria-disabled="true" title="Próximamente">Renuncia de Responsabilidad</a></li>
-            <li><a className="hover:underline" href="#" aria-disabled="true" title="Próximamente">Reportar Página</a></li>
+            <li><a className="hover:underline" href="/precios" aria-disabled="true" title="Próximamente">Renuncia de Responsabilidad</a></li>
+            <li><a className="hover:underline" href="/centro-ayuda">Reportar Página</a></li>
           </ul>
         </div>
       </div>

@@ -22,10 +22,10 @@ export default function PreciosPremium() {
             <li>Soporte Técnico Plus</li>
           </ul>
           <div className="rifarito-premium-desc">
-            <b>Para personas, influencers, marcas, negocios y empresas.</b> <a href="#" className="rifarito-premium-link">Ver más</a>
+            <b>Para personas, influencers, marcas, negocios y empresas.</b> <a href="/beneficios" className="rifarito-premium-link">Ver más</a>
           </div>
           <div className="rifarito-premium-boton-row">
-            <a href="#" className="rifarito-premium-boton">PREMIUM</a>
+            <a href="/precios" className="rifarito-premium-boton">PREMIUM</a>
           </div>
         </div>
         <div className="rifarito-premium__right">
@@ -35,7 +35,7 @@ export default function PreciosPremium() {
           <div className="rifarito-premium-desc2">
             Precio incluye Landing Page + Panel de Administración + Configuración Inicial + Soporte Online al Cliente
           </div>
-          <a href="#" className="rifarito-premium-link2">VER PRECIOS</a>
+          <a href="/precios" className="rifarito-premium-link2">VER PRECIOS</a>
         </div>
       </div>
     </section>

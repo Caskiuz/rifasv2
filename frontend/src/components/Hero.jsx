@@ -20,8 +20,8 @@ export default function Hero() {
             Vende boletos en línea con nuestra plataforma para <b>sorteos</b>: números de lotería y <b>tickets digitales</b>.
           </div>
           <div className="rifarito-hero__actions">
-            <a href="/landing/" className="btn-gradient">Explorar demos</a>
-            <a href="/premium/#pricing" className="btn-gradient">Ver tarifas</a>
+            <a href="/demos" className="btn-gradient">Explorar demos</a>
+            <a href="/precios" className="btn-gradient">Ver tarifas</a>
           </div>
         </div>
       </div>

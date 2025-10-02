@@ -23,8 +23,8 @@ const items = [
 		titulo: "Plataforma (Resumen)",
 		desc: (
 			<>
-				Somos la mejor <b>Plataforma</b>. Clientes satisfechos en <b>México, Colombia, Chile, Perú, Argentina, Ecuador, Bolivia, Uruguay, Paraguay, Guatemala, Panamá, Costa Rica, Venezuela, España</b>...{" "}
-				<a href="#plataforma" style={{ color: "#0ea5e9", fontWeight: 700, marginLeft: 6 }}>Ver más</a>
+								Somos la mejor <b>Plataforma</b>. Clientes satisfechos en <b>México, Colombia, Chile, Perú, Argentina, Ecuador, Bolivia, Uruguay, Paraguay, Guatemala, Panamá, Costa Rica, Venezuela, España</b>...{" "}
+								<a href="/sistema#plataforma" style={{ color: "#0ea5e9", fontWeight: 700, marginLeft: 6 }}>Ver más</a>
 			</>
 		),
 	},
