@@ -184,8 +184,8 @@ export default function Navbar({ user, setUser }) {
         )}
 
         {/* Hamburguesa */}
-  <button onClick={() => setIsMenuOpen(true)} className="inline-flex nav-menu-mobile-toggle items-center justify-center text-[#3b3f7a] hover:text-[#2b3166] transition" title="Menú" aria-label="Menú">
-          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        <button onClick={() => setIsMenuOpen(true)} className="nav-menu-mobile-toggle inline-flex items-center justify-center w-11 h-11 rounded-md border border-gray-200 text-[#3b3f7a] hover:text-[#2b3166] hover:bg-gray-50 transition" title="Menú" aria-label="Menú" aria-haspopup="menu" aria-expanded={isMenuOpen}>
+          <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
         </button>
         {isMenuOpen && (
           <div className="fixed inset-0 z-[6000]">
