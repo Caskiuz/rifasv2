@@ -478,6 +478,43 @@ nav ul > li > a:hover, nav ul > li > button:hover {
   .nav-menu-mobile-toggle { display: none; }
 }
 
+/* Botón flotante central inferior (solo mobile) */
+.floating-menu-btn {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  background: var(--brand-gradient);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 32px rgba(13,42,77,0.25);
+  border: none;
+  z-index: 6500;
+}
+.floating-menu-btn::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 9999px;
+  background: radial-gradient(closest-side, rgba(34,130,177,0.35), transparent);
+  animation: pulse-ring 1.8s ease-out infinite;
+  z-index: -1;
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(0.9); opacity: 0.75; }
+  70%  { transform: scale(1.15); opacity: 0; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+/* Oculto en tablets y desktop */
+@media (min-width: 768px) {
+  .floating-menu-btn { display: none; }
+}
+
 /* Responsive: ocultar lista en pantallas muy pequeñas si fuese necesario y mantener iconos visibles */
 @media (max-width: 820px) {
   nav ul { gap: 16px !important; }

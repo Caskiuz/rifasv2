@@ -40,6 +40,7 @@ export default function Navbar({ user, setUser }) {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
+    <>
     <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-white fixed top-0 left-0 z-40 border-b border-[#e6edf5] min-h-[66px]" style={{ zIndex: 2000 }}>
       {/* Logo */}
       <div className="flex items-center gap-6">
@@ -145,113 +146,112 @@ export default function Navbar({ user, setUser }) {
         </li>
       </ul>
 
-      {/* Iconos derecha (hamburguesa) */}
+      {/* Iconos derecha (sin hamburguesa en navbar) */}
   <div className="flex items-center gap-4 md:gap-6 ml-2 md:ml-4 relative">
         {user && <button className="bg-red-500 text-white px-5 py-2 rounded font-semibold ml-2" onClick={() => { setUser(null); }}>Cerrar sesión</button>}
-
-        {/* Hamburguesa */}
-        <button type="button" onClick={() => setIsMenuOpen(v => !v)}
-          className="nav-menu-mobile-toggle inline-flex items-center justify-center w-11 h-11 rounded-md border border-gray-200 text-[#3b3f7a] hover:text-[#2b3166] hover:bg-gray-50 transition"
-          title="Menú" aria-label="Menú" aria-haspopup="menu" aria-expanded={isMenuOpen} aria-controls="mobile-menu-panel"
-          style={{touchAction:'manipulation', zIndex: 7000, pointerEvents: 'auto'}}>
-          <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
-        </button>
-        {isMenuOpen && (
-          <div className="fixed inset-0 z-[6000]">
-            <div className="absolute inset-0 bg-black/40" onClick={() => setIsMenuOpen(false)} />
-            <aside id="mobile-menu-panel" className="absolute right-0 top-0 h-full w-[360px] max-w-[85vw] bg-white shadow-2xl p-6 overflow-y-auto" role="menu" aria-label="Menú móvil">
-              <div className="flex items-center justify-between mb-4">
-                <img src="/logo-rifatela.svg" alt="Rifatela Logo" className="h-10" />
-                <button onClick={() => setIsMenuOpen(false)} className="w-10 h-10 inline-flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50" aria-label="Cerrar">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-              </div>
-              {/* Menú móvil con secciones colapsables */}
-              <nav className="divide-y divide-gray-100">
-                {/* Inicio */}
-                <div className="py-2">
-                  <button className="w-full flex items-center justify-between py-2 text-left font-extrabold text-[#153e75]" onClick={() => toggleMobileSection('inicio')}>
-                    <span>Inicio</span>
-                    <span className={`transition-transform ${mobileSections.inicio ? 'rotate-180' : ''}`}>▾</span>
-                  </button>
-                  {mobileSections.inicio && (
-                    <ul className="pl-2 text-[#3f5873]">
-                      <li><Link to="/acerca" onClick={closeMenu} className="block py-2">Acerca de Rifatela</Link></li>
-                      <li><Link to="/preguntas-frecuentes" onClick={closeMenu} className="block py-2">Preguntas Frecuentes</Link></li>
-                      <li><Link to="/demos" onClick={closeMenu} className="block py-2">Demos Disponibles</Link></li>
-                      <li><Link to="/clientes" onClick={closeMenu} className="block py-2">Nuestros Clientes</Link></li>
-                      <li><Link to="/crear-pagina" onClick={closeMenu} className="block py-2">Crear una Página</Link></li>
-                      <li><Link to="/centro-ayuda" onClick={closeMenu} className="block py-2">Centro de Ayuda</Link></li>
-                      <li><Link to="/contacto" onClick={closeMenu} className="block py-2">Contacto</Link></li>
-                    </ul>
-                  )}
-                </div>
-                {/* Sistema */}
-                <div className="py-2">
-                  <button className="w-full flex items-center justify-between py-2 text-left font-extrabold text-[#153e75]" onClick={() => toggleMobileSection('sistema')}>
-                    <span>Sistema</span>
-                    <span className={`transition-transform ${mobileSections.sistema ? 'rotate-180' : ''}`}>▾</span>
-                  </button>
-                  {mobileSections.sistema && (
-                    <ul className="pl-2 text-[#3f5873]">
-                      <li><Link to="/sistema#web-online" onClick={closeMenu} className="block py-2">Página Web Online</Link></li>
-                      <li><Link to="/sistema#panel" onClick={closeMenu} className="block py-2">Panel de Administración</Link></li>
-                      <li><Link to="/sistema#configuraciones" onClick={closeMenu} className="block py-2">Múltiples Configuraciones</Link></li>
-                      <li><Link to="/sistema#verificador" onClick={closeMenu} className="block py-2">Verificador de Tickets</Link></li>
-                      <li><Link to="/sistema#plataforma" onClick={closeMenu} className="block py-2">Plataforma (Resumen)</Link></li>
-                      <li className="border-t border-gray-100 mt-1 pt-1"><Link to="/login" onClick={closeMenu} className="block py-2 text-primary">Iniciar Sesión</Link></li>
-                      <li><Link to="/registro" onClick={closeMenu} className="block py-2 text-primary">Registrarse</Link></li>
-                      <li><Link to="/verificador" onClick={closeMenu} className="block py-2 text-primary">Verificador de Tickets</Link></li>
-                      {user && <li><Link to="/usuario" onClick={closeMenu} className="block py-2 text-primary">Panel Usuario</Link></li>}
-                      {user && <li><Link to="/admin" onClick={closeMenu} className="block py-2 text-primary">Panel Admin</Link></li>}
-                    </ul>
-                  )}
-                </div>
-                {/* Beneficios */}
-                <div className="py-2">
-                  <button className="w-full flex items-center justify-between py-2 text-left font-extrabold text-[#153e75]" onClick={() => toggleMobileSection('beneficios')}>
-                    <span>Beneficios</span>
-                    <span className={`transition-transform ${mobileSections.beneficios ? 'rotate-180' : ''}`}>▾</span>
-                  </button>
-                  {mobileSections.beneficios && (
-                    <ul className="pl-2 text-[#3f5873]">
-                      <li><Link to="/beneficios#sin-comisiones" onClick={closeMenu} className="block py-2">Sin Comisiones</Link></li>
-                      <li><Link to="/beneficios#facil" onClick={closeMenu} className="block py-2">Fácil de Usar</Link></li>
-                      <li><Link to="/beneficios#automatizado" onClick={closeMenu} className="block py-2">Automatizado</Link></li>
-                      <li><Link to="/beneficios#administrable" onClick={closeMenu} className="block py-2">Administrable</Link></li>
-                      <li className="border-t border-gray-100 mt-1 pt-1"><Link to="/testimonios" onClick={closeMenu} className="block py-2 text-primary">Testimonios</Link></li>
-                      <li><Link to="/preguntas-frecuentes" onClick={closeMenu} className="block py-2 text-primary">Preguntas Frecuentes</Link></li>
-                    </ul>
-                  )}
-                </div>
-                {/* Configuraciones */}
-                <div className="py-2">
-                  <button className="w-full flex items-center justify-between py-2 text-left font-extrabold text-[#153e75]" onClick={() => toggleMobileSection('configuraciones')}>
-                    <span>Configuraciones</span>
-                    <span className={`transition-transform ${mobileSections.configuraciones ? 'rotate-180' : ''}`}>▾</span>
-                  </button>
-                  {mobileSections.configuraciones && (
-                    <ul className="pl-2 text-[#3f5873]">
-                      <li><Link to="/configuraciones#dominio" onClick={closeMenu} className="block py-2">Dominio</Link></li>
-                      <li><Link to="/configuraciones#web" onClick={closeMenu} className="block py-2">Página Web</Link></li>
-                      <li><Link to="/configuraciones#seo" onClick={closeMenu} className="block py-2">SEO</Link></li>
-                      <li><Link to="/configuraciones#pagos" onClick={closeMenu} className="block py-2">Pagos</Link></li>
-                      <li><Link to="/configuraciones#panel" onClick={closeMenu} className="block py-2">Panel de Administración</Link></li>
-                      <li><Link to="/configuraciones#notificaciones" onClick={closeMenu} className="block py-2">Notificaciones</Link></li>
-                      <li><Link to="/configuraciones#vendedores" onClick={closeMenu} className="block py-2">Vendedores</Link></li>
-                      <li><Link to="/configuraciones#boletos" onClick={closeMenu} className="block py-2">Boletos</Link></li>
-                      <li><Link to="/configuraciones#promociones" onClick={closeMenu} className="block py-2">Promociones</Link></li>
-                      <li><Link to="/configuraciones#reportes" onClick={closeMenu} className="block py-2">Reportes</Link></li>
-                      <li><Link to="/configuraciones#seguridad" onClick={closeMenu} className="block py-2">Seguridad</Link></li>
-                      <li><Link to="/configuraciones#integraciones" onClick={closeMenu} className="block py-2">Integraciones</Link></li>
-                    </ul>
-                  )}
-                </div>
-              </nav>
-            </aside>
-          </div>
-        )}
       </div>
     </nav>
+    {/* Botón flotante centrado inferior (solo móvil) */}
+    <button type="button" className="floating-menu-btn" aria-label="Abrir menú" aria-haspopup="menu" aria-expanded={isMenuOpen} aria-controls="mobile-menu-panel" onClick={() => setIsMenuOpen(v => !v)}>
+      <svg width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2.4" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+    </button>
+
+    {/* Overlay/panel móvil global */}
+    {isMenuOpen && (
+      <div className="fixed inset-0 z-[6000]">
+        <div className="absolute inset-0 bg-black/40" onClick={() => setIsMenuOpen(false)} />
+        <aside id="mobile-menu-panel" className="absolute right-0 top-0 h-full w-[360px] max-w-[85vw] bg-white shadow-2xl p-6 overflow-y-auto" role="menu" aria-label="Menú móvil">
+          <div className="flex items-center justify-between mb-4">
+            <img src="/logo-rifatela.svg" alt="Rifatela Logo" className="h-10" />
+            <button onClick={() => setIsMenuOpen(false)} className="w-10 h-10 inline-flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50" aria-label="Cerrar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+          {/* Menú móvil con secciones colapsables */}
+          <nav className="divide-y divide-gray-100">
+            {/* Inicio */}
+            <div className="py-2">
+              <button className="w-full flex items-center justify-between py-2 text-left font-extrabold text-[#153e75]" onClick={() => toggleMobileSection('inicio')}>
+                <span>Inicio</span>
+                <span className={`transition-transform ${mobileSections.inicio ? 'rotate-180' : ''}`}>▾</span>
+              </button>
+              {mobileSections.inicio && (
+                <ul className="pl-2 text-[#3f5873]">
+                  <li><Link to="/acerca" onClick={closeMenu} className="block py-2">Acerca de Rifatela</Link></li>
+                  <li><Link to="/preguntas-frecuentes" onClick={closeMenu} className="block py-2">Preguntas Frecuentes</Link></li>
+                  <li><Link to="/demos" onClick={closeMenu} className="block py-2">Demos Disponibles</Link></li>
+                  <li><Link to="/clientes" onClick={closeMenu} className="block py-2">Nuestros Clientes</Link></li>
+                  <li><Link to="/crear-pagina" onClick={closeMenu} className="block py-2">Crear una Página</Link></li>
+                  <li><Link to="/centro-ayuda" onClick={closeMenu} className="block py-2">Centro de Ayuda</Link></li>
+                  <li><Link to="/contacto" onClick={closeMenu} className="block py-2">Contacto</Link></li>
+                </ul>
+              )}
+            </div>
+            {/* Sistema */}
+            <div className="py-2">
+              <button className="w-full flex items-center justify-between py-2 text-left font-extrabold text-[#153e75]" onClick={() => toggleMobileSection('sistema')}>
+                <span>Sistema</span>
+                <span className={`transition-transform ${mobileSections.sistema ? 'rotate-180' : ''}`}>▾</span>
+              </button>
+              {mobileSections.sistema && (
+                <ul className="pl-2 text-[#3f5873]">
+                  <li><Link to="/sistema#web-online" onClick={closeMenu} className="block py-2">Página Web Online</Link></li>
+                  <li><Link to="/sistema#panel" onClick={closeMenu} className="block py-2">Panel de Administración</Link></li>
+                  <li><Link to="/sistema#configuraciones" onClick={closeMenu} className="block py-2">Múltiples Configuraciones</Link></li>
+                  <li><Link to="/sistema#verificador" onClick={closeMenu} className="block py-2">Verificador de Tickets</Link></li>
+                  <li><Link to="/sistema#plataforma" onClick={closeMenu} className="block py-2">Plataforma (Resumen)</Link></li>
+                  <li className="border-t border-gray-100 mt-1 pt-1"><Link to="/login" onClick={closeMenu} className="block py-2 text-primary">Iniciar Sesión</Link></li>
+                  <li><Link to="/registro" onClick={closeMenu} className="block py-2 text-primary">Registrarse</Link></li>
+                  <li><Link to="/verificador" onClick={closeMenu} className="block py-2 text-primary">Verificador de Tickets</Link></li>
+                  {user && <li><Link to="/usuario" onClick={closeMenu} className="block py-2 text-primary">Panel Usuario</Link></li>}
+                  {user && <li><Link to="/admin" onClick={closeMenu} className="block py-2 text-primary">Panel Admin</Link></li>}
+                </ul>
+              )}
+            </div>
+            {/* Beneficios */}
+            <div className="py-2">
+              <button className="w-full flex items-center justify-between py-2 text-left font-extrabold text-[#153e75]" onClick={() => toggleMobileSection('beneficios')}>
+                <span>Beneficios</span>
+                <span className={`transition-transform ${mobileSections.beneficios ? 'rotate-180' : ''}`}>▾</span>
+              </button>
+              {mobileSections.beneficios && (
+                <ul className="pl-2 text-[#3f5873]">
+                  <li><Link to="/beneficios#sin-comisiones" onClick={closeMenu} className="block py-2">Sin Comisiones</Link></li>
+                  <li><Link to="/beneficios#facil" onClick={closeMenu} className="block py-2">Fácil de Usar</Link></li>
+                  <li><Link to="/beneficios#automatizado" onClick={closeMenu} className="block py-2">Automatizado</Link></li>
+                  <li><Link to="/beneficios#administrable" onClick={closeMenu} className="block py-2">Administrable</Link></li>
+                  <li className="border-t border-gray-100 mt-1 pt-1"><Link to="/testimonios" onClick={closeMenu} className="block py-2 text-primary">Testimonios</Link></li>
+                  <li><Link to="/preguntas-frecuentes" onClick={closeMenu} className="block py-2 text-primary">Preguntas Frecuentes</Link></li>
+                </ul>
+              )}
+            </div>
+            {/* Configuraciones */}
+            <div className="py-2">
+              <button className="w-full flex items-center justify-between py-2 text-left font-extrabold text-[#153e75]" onClick={() => toggleMobileSection('configuraciones')}>
+                <span>Configuraciones</span>
+                <span className={`transition-transform ${mobileSections.configuraciones ? 'rotate-180' : ''}`}>▾</span>
+              </button>
+              {mobileSections.configuraciones && (
+                <ul className="pl-2 text-[#3f5873]">
+                  <li><Link to="/configuraciones#dominio" onClick={closeMenu} className="block py-2">Dominio</Link></li>
+                  <li><Link to="/configuraciones#web" onClick={closeMenu} className="block py-2">Página Web</Link></li>
+                  <li><Link to="/configuraciones#seo" onClick={closeMenu} className="block py-2">SEO</Link></li>
+                  <li><Link to="/configuraciones#pagos" onClick={closeMenu} className="block py-2">Pagos</Link></li>
+                  <li><Link to="/configuraciones#panel" onClick={closeMenu} className="block py-2">Panel de Administración</Link></li>
+                  <li><Link to="/configuraciones#notificaciones" onClick={closeMenu} className="block py-2">Notificaciones</Link></li>
+                  <li><Link to="/configuraciones#vendedores" onClick={closeMenu} className="block py-2">Vendedores</Link></li>
+                  <li><Link to="/configuraciones#boletos" onClick={closeMenu} className="block py-2">Boletos</Link></li>
+                  <li><Link to="/configuraciones#promociones" onClick={closeMenu} className="block py-2">Promociones</Link></li>
+                  <li><Link to="/configuraciones#reportes" onClick={closeMenu} className="block py-2">Reportes</Link></li>
+                  <li><Link to="/configuraciones#seguridad" onClick={closeMenu} className="block py-2">Seguridad</Link></li>
+                  <li><Link to="/configuraciones#integraciones" onClick={closeMenu} className="block py-2">Integraciones</Link></li>
+                </ul>
+              )}
+            </div>
+          </nav>
+        </aside>
+      </div>
+    )}
+    </>
   );
 }
