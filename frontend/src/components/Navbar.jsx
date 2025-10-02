@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar({ user, setUser }) {
   const location = useLocation();
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileSections, setMobileSections] = useState({
     inicio: false,
@@ -11,41 +10,23 @@ export default function Navbar({ user, setUser }) {
     beneficios: false,
     configuraciones: false,
   });
-  const searchBtnRef = useRef(null);
-  const searchPopoverRef = useRef(null);
 
-  // Cerrar popover de búsqueda con click fuera o ESC
+  // Cerrar menú con ESC
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') {
-        setIsSearchOpen(false);
         setIsMenuOpen(false);
       }
     };
-    const onClick = (e) => {
-      if (isSearchOpen) {
-        if (
-          searchPopoverRef.current &&
-          !searchPopoverRef.current.contains(e.target) &&
-          searchBtnRef.current &&
-          !searchBtnRef.current.contains(e.target)
-        ) {
-          setIsSearchOpen(false);
-        }
-      }
-    };
     window.addEventListener('keydown', onKey);
-    window.addEventListener('mousedown', onClick);
     return () => {
       window.removeEventListener('keydown', onKey);
-      window.removeEventListener('mousedown', onClick);
     };
-  }, [isSearchOpen, isMenuOpen]);
+  }, [isMenuOpen]);
 
   // Cerrar menú/búsqueda al cambiar de ruta/hash (mejor experiencia y evitar estados colgados)
   useEffect(() => {
     setIsMenuOpen(false);
-    setIsSearchOpen(false);
   }, [location.pathname, location.hash]);
 
   const scrollToPrecios = (e) => {
@@ -164,34 +145,21 @@ export default function Navbar({ user, setUser }) {
         </li>
       </ul>
 
-      {/* Iconos derecha (lupa y hamburguesa) */}
+      {/* Iconos derecha (hamburguesa) */}
   <div className="flex items-center gap-4 md:gap-6 ml-2 md:ml-4 relative">
         {user && <button className="bg-red-500 text-white px-5 py-2 rounded font-semibold ml-2" onClick={() => { setUser(null); }}>Cerrar sesión</button>}
 
-        {/* Lupa */}
-        <button ref={searchBtnRef} onClick={() => setIsSearchOpen(v => !v)} className="inline-flex items-center justify-center text-[#3b3f7a] hover:text-[#2b3166] transition" title="Buscar" aria-label="Buscar">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        </button>
-        {isSearchOpen && (
-          <div ref={searchPopoverRef} className="absolute right-16 top-14 bg-white border border-gray-200 rounded-xl shadow-xl p-2 w-[260px] z-[5000]" style={{ boxShadow: '0 10px 28px rgba(17,24,39,0.14)' }}>
-            <form onSubmit={(e) => { e.preventDefault(); setIsSearchOpen(false); }} className="flex items-center gap-2">
-              <input autoFocus type="text" placeholder="Search" className="flex-1 px-3 py-2 rounded-md border border-gray-200 outline-none focus:ring-2 focus:ring-blue-200" />
-              <button type="submit" className="inline-flex items-center justify-center w-9 h-9 rounded-md bg-blue-600 text-white hover:bg-blue-700">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-              </button>
-            </form>
-          </div>
-        )}
-
         {/* Hamburguesa */}
-        <button onClick={() => setIsMenuOpen(v => !v)} className="nav-menu-mobile-toggle inline-flex items-center justify-center w-11 h-11 rounded-md border border-gray-200 text-[#3b3f7a] hover:text-[#2b3166] hover:bg-gray-50 transition" title="Menú" aria-label="Menú" aria-haspopup="menu" aria-expanded={isMenuOpen}
-          style={{touchAction:'manipulation'}}>
+        <button onClick={() => setIsMenuOpen(v => !v)} onTouchStart={() => setIsMenuOpen(v => !v)}
+          className="nav-menu-mobile-toggle inline-flex items-center justify-center w-11 h-11 rounded-md border border-gray-200 text-[#3b3f7a] hover:text-[#2b3166] hover:bg-gray-50 transition"
+          title="Menú" aria-label="Menú" aria-haspopup="menu" aria-expanded={isMenuOpen} aria-controls="mobile-menu-panel"
+          style={{touchAction:'manipulation', zIndex: 7000, pointerEvents: 'auto'}}>
           <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
         </button>
         {isMenuOpen && (
           <div className="fixed inset-0 z-[6000]">
             <div className="absolute inset-0 bg-black/40" onClick={() => setIsMenuOpen(false)} />
-            <aside className="absolute right-0 top-0 h-full w-[360px] max-w-[85vw] bg-white shadow-2xl p-6 overflow-y-auto" role="menu" aria-label="Menú móvil">
+            <aside id="mobile-menu-panel" className="absolute right-0 top-0 h-full w-[360px] max-w-[85vw] bg-white shadow-2xl p-6 overflow-y-auto" role="menu" aria-label="Menú móvil">
               <div className="flex items-center justify-between mb-4">
                 <img src="/logo-rifatela.svg" alt="Rifatela Logo" className="h-10" />
                 <button onClick={() => setIsMenuOpen(false)} className="w-10 h-10 inline-flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50" aria-label="Cerrar">
