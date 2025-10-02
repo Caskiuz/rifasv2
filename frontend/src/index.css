@@ -437,6 +437,8 @@ body { overflow-x: hidden; }
 img, svg, canvas, video { max-width: 100%; height: auto; }
 /* Evitar que cualquier sección fuerce más de 100vw */
 section, header, footer, nav, main, aside, .container, .wrapper { max-width: 100vw; overflow-x: clip; }
+/* Portales/overlays */
+.menu-overlay { z-index: 9999 !important; }
 
 /* Navbar sólido y elementos de texto planos (sin fondo/bordes) */
 nav { background: #fff; }

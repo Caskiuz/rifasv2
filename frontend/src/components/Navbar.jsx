@@ -25,10 +25,10 @@ export default function Navbar({ user, setUser }) {
     };
   }, [isMenuOpen]);
 
-  // Cerrar menú/búsqueda al cambiar de ruta/hash (mejor experiencia y evitar estados colgados)
+  // Cerrar menú al cambiar de ruta (no por hash, para no cerrar por anclas/scroll)
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [location.pathname, location.hash]);
+  }, [location.pathname]);
 
   const scrollToPrecios = (e) => {
     e.preventDefault();
@@ -172,8 +172,8 @@ export default function Navbar({ user, setUser }) {
 
     {/* Overlay/panel móvil global */}
     {isMenuOpen && createPortal((
-      <div className="fixed inset-0 menu-overlay" style={{pointerEvents:'auto', zIndex: 9999}}>
-        <div className="absolute inset-0 bg-black/40" onClick={() => setIsMenuOpen(false)} />
+      <div className="menu-overlay" style={{position:'fixed', left:0, top:0, width:'100vw', height:'100dvh', pointerEvents:'auto', zIndex: 9999}}>
+        <div style={{position:'absolute', inset:0, background:'rgba(0,0,0,0.40)'}} onClick={() => setIsMenuOpen(false)} />
         <aside id="mobile-menu-panel" className="absolute right-0 top-0 h-full w-[360px] max-w-[85vw] bg-white shadow-2xl p-6 overflow-y-auto" role="menu" aria-label="Menú móvil" style={{transform:'translateX(0)'}}>
           <div className="flex items-center justify-between mb-4">
             <img src="/logo-rifatela.svg" alt="Rifatela Logo" className="h-10" />
