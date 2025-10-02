@@ -367,8 +367,13 @@ body {
 /* Grid responsivo para categorías de ayuda */
 .help-categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1fr;
   gap: 28px;
+}
+@media (min-width: 900px) {
+  .help-categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Tarjetas en estilo caja */
@@ -416,6 +421,11 @@ html { scroll-behavior: smooth; }
 /* Forzar fondo blanco opaco en submenús y evitar cualquier blur/transparencia heredada */
 .nav-submenu { background: #ffffff !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
 
+/* En mobile, desactivar los submenús por hover (usamos panel lateral) */
+@media (max-width: 767px) {
+  .nav-item .nav-submenu { display: none !important; }
+}
+
 /* Detalles/summary sin marcador por defecto */
 details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
@@ -453,6 +463,14 @@ nav ul > li > a, nav ul > li > button {
 nav ul > li > a:hover, nav ul > li > button:hover {
   color: #1e4e9b;
   background: transparent;
+}
+
+/* Visibilidad del menú según viewport */
+.nav-menu-desktop { display: none; }
+.nav-menu-mobile-toggle { display: inline-flex; }
+@media (min-width: 768px) {
+  .nav-menu-desktop { display: flex; }
+  .nav-menu-mobile-toggle { display: none; }
 }
 
 /* Responsive: ocultar lista en pantallas muy pequeñas si fuese necesario y mantener iconos visibles */
