@@ -41,4 +41,47 @@
     "excerpt": "Recibe eventos en tu sistema externo.",
     "content": "Configura un endpoint en Integraciones > Webhooks. Rifatela enviará eventos como pago_confirmado o boleto_emitido para que puedas sincronizar con tus sistemas." 
   }
+,
+  {
+    "slug": "preguntas-frecuentes-generales",
+    "title": "Preguntas frecuentes generales",
+    "category": "preguntas-frecuentes",
+    "excerpt": "Respuestas a dudas comunes sobre Rifatela.",
+    "content": "Encuentra respuestas rápidas sobre creación de rifas, pagos, seguridad y más dentro de esta sección de preguntas frecuentes." 
+  },
+  {
+    "slug": "crear-nueva-rifa",
+    "title": "Crear una nueva rifa",
+    "category": "nuevas-rifas",
+    "excerpt": "Pasos para publicar una rifa desde cero.",
+    "content": "Desde el Panel de Rifatela, ve a Rifas > Crear. Completa título, imágenes, precio, fecha y reglas. Luego publica cuando estés listo." 
+  },
+  {
+    "slug": "resumen-funcionalidades",
+    "title": "Resumen de funcionalidades",
+    "category": "funcionalidades",
+    "excerpt": "Qué incluye la plataforma Rifatela.",
+    "content": "Rifatela incluye landing personalizable, verificador, sorteador, reportes, gestión de premios, participantes, métodos de pago y más." 
+  },
+  {
+    "slug": "panel-admin-introduccion",
+    "title": "Introducción al Panel de administración",
+    "category": "panel-de-administracion",
+    "excerpt": "Primeros pasos en el Panel de Rifatela.",
+    "content": "Aprende a navegar el panel: estadísticas, listas de rifas, participantes, tickets y configuraciones generales." 
+  },
+  {
+    "slug": "pasarelas-y-pagos",
+    "title": "Pasarelas y métodos de pago",
+    "category": "pasarelas-pagos",
+    "excerpt": "Conecta Stripe u otros medios compatibles.",
+    "content": "En Configuración > Pagos, conecta tu cuenta y define los métodos de cobro disponibles según tu país." 
+  },
+  {
+    "slug": "conectar-dominio-propio",
+    "title": "Conectar un dominio propio",
+    "category": "dominios",
+    "excerpt": "Conecta tu dominio y apunta DNS.",
+    "content": "Desde Configuración > Dominio, agrega tu dominio y sigue las instrucciones de DNS para apuntarlo a tu landing de Rifatela." 
+  }
 ]

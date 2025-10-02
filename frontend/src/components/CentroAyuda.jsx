@@ -59,13 +59,14 @@ const faqs = [
   },
 ];
 
+// Categorías principales (como en la referencia visual)
 const categorias = [
-  { key: "primeros-pasos", title: "Primeros pasos", desc: "Crea tu cuenta, configura tu marca y lanza tu primera rifa." },
-  { key: "pagos", title: "Pagos y cobros", desc: "Conecta Stripe, administra monedas e impuestos." },
-  { key: "rifas", title: "Rifas y boletos", desc: "Publica, pausa, y gestiona sorteos y boletos digitales." },
-  { key: "seguridad", title: "Seguridad", desc: "Control de acceso, recuperación de cuenta y mejores prácticas." },
-  { key: "reportes", title: "Reportes", desc: "Ventas, conversiones y resultados de sorteos." },
-  { key: "integraciones", title: "Integraciones", desc: "Webhooks, notificaciones y compatibilidad." },
+  { key: 'preguntas-frecuentes', title: 'Preguntas Frecuentes', desc: 'Todas las dudas frecuentes.' },
+  { key: 'nuevas-rifas', title: 'Nuevas Rifas', desc: 'Datos requeridos y configuraciones iniciales..' },
+  { key: 'funcionalidades', title: 'Funcionalidades', desc: 'Descripción y utilización de las funcionalidades..' },
+  { key: 'panel-de-administracion', title: 'Panel de Administración', desc: 'Uso de la Consola.' },
+  { key: 'pasarelas-pagos', title: 'Pasarelas de Pagos', desc: 'Guías para configurar las pasarelas de pagos en su Cuenta..' },
+  { key: 'dominios', title: 'Dominios', desc: 'Guías de configuraciones de Dominios en los distintos Proveedores..' },
 ];
 
 export default function CentroAyuda() {
@@ -87,92 +88,61 @@ export default function CentroAyuda() {
   const toggle = (idx) => setOpen((s) => ({ ...s, [idx]: !s[idx] }));
 
   return (
-    <main className="pt-24 md:pt-28 pb-16">
-      {/* Hero con fondo y overlay */}
-      <section className="relative">
-        {/* Fondo con la imagen del layout original */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('/assets/home13_bg11okcc-1536x578bg.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-          aria-hidden
-        />
-        {/* Overlay de marca para contraste */}
-        <div className="absolute inset-0 brand-hero-overlay" aria-hidden />
-
-        <div className="relative px-6 pt-10 pb-16 md:pt-12 md:pb-20">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex items-center justify-end gap-3">
-              <a href="https://rifatela.com" target="_blank" rel="noreferrer" className="btn-gradient">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M3 12l2-2 4 4 10-10 2 2-12 12-6-6z" />
-                </svg>
-                Sitio web
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="btn-gradient">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                  <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.5V12h2.8l-.45 2.9h-2.35v7A10 10 0 0 0 22 12z" />
-                </svg>
-                Facebook
-              </a>
+    <main className="bg-white">
+      {/* Hero consistente con el resto del sitio */}
+      <section className="landing-hero landing-hero__layer">
+        <div className="landing-hero__content">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Mantener este texto exacto para los tests (pill) */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/85 border border-white shadow-sm">
+              <IconHelp className="w-4 h-4 text-[var(--brand-text)]" />
+              <span className="text-xs font-semibold tracking-[.08em] text-[var(--brand-text)]">Centro de Ayuda</span>
             </div>
-            <div className="mt-6 max-w-4xl mx-auto text-center">
-              {/* Mantener este texto exacto para los tests */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-white shadow-sm">
-                <IconHelp className="w-4 h-4 text-[var(--brand-text)]" />
-                <span className="text-xs font-semibold tracking-[.08em] text-[var(--brand-text)]">Centro de Ayuda</span>
-              </div>
-              <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-[-0.01em] leading-[1.1] text-white" style={{fontFamily:'Rubik, ui-sans-serif, system-ui'}}>
-                Hola, Bienvenido
-              </h1>
-              <p className="mt-3 text-white/90 leading-relaxed">¿Qué estás buscando?</p>
+            <h1 className="mt-3 landing-title" style={{ color: '#ffffff' }}>Hola, bienvenido</h1>
+            <p className="mt-1 text-white/90 leading-relaxed">¿Qué necesitas encontrar?</p>
 
-              {/* Buscador pill */}
-              <div className="mt-8">
-                <form onSubmit={(e) => e.preventDefault()} className="relative max-w-2xl mx-auto">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                  </span>
-                  <input
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    type="search"
-                    placeholder="Buscar …"
-                    className="w-full pl-12 pr-20 py-4 rounded-full border border-gray-200 shadow-[0_8px_24px_rgba(13,42,77,0.10)] bg-white/95 focus:outline-none focus:ring-2 focus:ring-blue-100"
-                  />
-                  <button
-                    className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center h-11 w-11 rounded-full btn-gradient"
-                    title="Buscar"
-                    aria-label="Buscar"
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12H13"/><path d="M13 12l3-3m-3 3l3 3"/></svg>
-                  </button>
-                </form>
+            {/* Buscador pill */}
+            <div className="mt-6">
+              <form onSubmit={(e) => e.preventDefault()} className="relative max-w-2xl mx-auto">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  type="search"
+                  placeholder="Buscar artículos…"
+                  className="w-full pl-12 pr-20 py-4 rounded-full border border-gray-200 shadow-[0_8px_24px_rgba(13,42,77,0.10)] bg-white/95 focus:outline-none focus:ring-2 focus:ring-blue-100"
+                />
+                <button
+                  className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center h-11 w-11 rounded-full btn-gradient"
+                  title="Buscar"
+                  aria-label="Buscar"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12H13"/><path d="M13 12l3-3m-3 3l3 3"/></svg>
+                </button>
+              </form>
 
-                {/* Resultados rápidos */}
-                {query && (
-                  <div className="text-left max-w-2xl mx-auto mt-3 bg-white/95 border border-gray-100 rounded-xl shadow p-3">
-                    {resultados.length === 0 ? (
-                      <p className="text-gray-700">No encontramos resultados para "{query}". Prueba con otras palabras.</p>
-                    ) : (
-                      <ul className="divide-y divide-gray-100">
-                        {resultados.map((r, i) => (
-                          <li key={i} className="py-2">
-                            <p className="font-semibold text-[var(--brand-text)]">{r.title}</p>
-                            <p className="text-gray-600 text-sm">{r.excerpt}</p>
-                            {r.type === 'article' && r.slug && (
-                              <a className="text-primary text-sm font-semibold" href={`/centro-ayuda/${r.slug}`}>Abrir artículo →</a>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                )}
-              </div>
+              {/* Resultados rápidos */}
+              {query && (
+                <div className="text-left max-w-2xl mx-auto mt-3 bg-white/95 border border-gray-100 rounded-xl shadow p-3">
+                  {resultados.length === 0 ? (
+                    <p className="text-gray-700">No encontramos resultados para "{query}". Prueba con otras palabras.</p>
+                  ) : (
+                    <ul className="divide-y divide-gray-100">
+                      {resultados.map((r, i) => (
+                        <li key={i} className="py-2">
+                          <p className="font-semibold text-[var(--brand-text)]">{r.title}</p>
+                          <p className="text-gray-600 text-sm">{r.excerpt}</p>
+                          {r.type === 'article' && r.slug && (
+                            <a className="text-primary text-sm font-semibold" href={`/centro-ayuda/${r.slug}`}>Abrir artículo →</a>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -193,41 +163,26 @@ export default function CentroAyuda() {
         </div>
       </section>
 
-      {/* Categorías */}
-      <section className="px-6 mt-12">
+      {/* Categorías: estilo cajas limpias */}
+      <section className="px-6 mt-12 help-categories-section">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-extrabold tracking-[-0.01em] leading-tight text-[var(--brand-text)] text-center mb-6" style={{fontFamily:'Rubik, ui-sans-serif, system-ui'}}>Categorías</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="help-categories-grid">
             {categorias.map((c) => {
-              const count = articles.filter(a => a.category === c.key).length;
-              const countLabel = `${count} ${count === 1 ? 'artículo' : 'artículos'}`;
-              const Icon = (
-                c.key === 'primeros-pasos' ? IconHelp :
-                c.key === 'pagos' ? IconCreditCard :
-                c.key === 'rifas' ? IconTicket :
-                c.key === 'seguridad' ? IconShield :
-                c.key === 'reportes' ? IconChart :
-                IconGear
-              );
               return (
                 <article
                   key={c.key}
-                  className="rounded-[24px] bg-white p-6 border border-[#e6edf5] shadow-[0_4px_14px_rgba(13,42,77,0.10)] hover:shadow-[0_14px_30px_rgba(13,42,77,0.16)] hover:-translate-y-0.5 transition-transform transition-shadow duration-200"
+                  className="help-category-card text-center hover:shadow-[0_12px_24px_rgba(13,42,77,0.12)] transition-shadow"
                 >
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="shrink-0 w-10 h-10 rounded-2xl bg-[#eef5ff] text-[#1a5d87] flex items-center justify-center">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <h3 className="text-[22px] leading-6 font-extrabold tracking-[-0.01em] text-[var(--brand-text)]" style={{fontFamily:'Rubik, ui-sans-serif, system-ui'}}>{c.title}</h3>
-                  </div>
+                  <h3 className="text-[22px] md:text-[24px] font-extrabold tracking-[-0.01em] text-[var(--brand-text)] leading-snug" style={{fontFamily:'Rubik, ui-sans-serif, system-ui'}}>
+                    {c.title}
+                  </h3>
                   <p className="mt-2 text-gray-600 text-sm leading-relaxed">{c.desc}</p>
-                  <div className="mt-2 text-xs text-gray-500">{countLabel}</div>
                   <a
-                    href={`#${c.key}`}
-                    className="group mt-5 inline-flex items-center gap-2 justify-center h-11 px-6 rounded-full text-[var(--brand-text)] font-semibold border border-[#bcd0e6] hover:bg-[var(--brand-text)] hover:text-white transition-colors duration-150"
+                    href={`/centro-ayuda/categoria/${c.key}`}
+                    className="btn-gradient mt-5"
                   >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="transition-transform group-hover:translate-x-0.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                    Ver Categoría
+                    Ver categoría
                   </a>
                 </article>
               );

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/sistema.css";
 
 const items = [
@@ -29,8 +30,34 @@ const items = [
 	},
 ];
 
+const IDS = [
+	"web-online",
+	"panel",
+	"configuraciones",
+	"verificador",
+	"plataforma",
+];
+
 const SistemaBrinda = () => {
 	const [open, setOpen] = useState(0);
+	const location = useLocation();
+
+	// Si llega un hash (#panel, etc.), abrir el acordeón correspondiente y desplazar suavemente
+	useEffect(() => {
+		if (location.hash) {
+			const id = location.hash.replace('#', '');
+			const idx = IDS.indexOf(id);
+			if (idx !== -1) {
+				setOpen(idx);
+				const el = document.getElementById(id);
+				if (el) {
+					requestAnimationFrame(() => {
+						el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+					});
+				}
+			}
+		}
+	}, [location.hash]);
 	return (
 		<section className="rifarito-sistema" id="sistema">
 			<div className="rifarito-sistema__container">
@@ -41,10 +68,9 @@ const SistemaBrinda = () => {
 					<div className="rifarito-sistema__accordion">
 						{items.map((item, i) => (
 							<div
-								className={`rifarito-sistema__panel${
-									open === i ? " open" : ""
-								}`}
+								className={`rifarito-sistema__panel${open === i ? " open" : ""} anchor-target`}
 								key={i}
+								id={IDS[i]}
 							>
 								<div
 									className="rifarito-sistema__panel-header"

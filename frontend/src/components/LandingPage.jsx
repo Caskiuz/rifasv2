@@ -6,17 +6,17 @@ const LandingPage = () => {
       <header className="w-full py-8 bg-white shadow-md flex flex-col items-center">
   <img src="/assets/logo-rifatela.png" alt="Logo Rifatela" className="w-32 mb-2" />
         <h1 className="text-4xl font-bold text-blue-700 mb-2">Bienvenido a tu Plataforma de Rifas</h1>
-        <p className="text-lg text-gray-600">Crea, administra y vende boletos de rifas online de forma fácil y segura.</p>
+  <p className="text-lg text-gray-600">Crea, gestiona y comercializa boletos de rifas en línea de manera sencilla y confiable.</p>
       </header>
       <main className="flex-1 w-full max-w-5xl px-4 py-12">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl font-semibold mb-4">Personaliza tu experiencia</h2>
             <ul className="list-disc pl-6 text-gray-700 mb-6">
-              <li>Logo y colores de tu marca</li>
-              <li>Configuración de rifas y boletos</li>
-              <li>Panel de administración y vendedores</li>
-              <li>Integración de pagos y notificaciones</li>
+              <li>Identidad visual: logo y paleta de colores</li>
+              <li>Ajustes de rifas y tickets</li>
+              <li>Panel para administradores y vendedores</li>
+              <li>Pagos integrados y alertas automáticas</li>
             </ul>
             <a href="/registro" className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700">Crear mi cuenta</a>
           </div>

@@ -49,7 +49,7 @@ nav ul, nav li, nav ul ul, nav ul li {
               radial-gradient(60% 60% at 80% 60%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.0) 70%);
 }
 .faq-hero__content { position: relative; z-index: 1; width: 100%; max-width: 1100px; padding: 36px 16px 44px 16px; text-align: center; }
-.faq-title { font-family: 'Rubik', Arial, sans-serif; font-weight: 800; font-size: clamp(26px, 4vw, 38px); margin: 0; }
+.faq-title { font-family: 'Rubik', Arial, sans-serif; font-weight: 800; font-size: clamp(26px, 4vw, 38px); margin: 0; color: #ffffff; }
 .faq-crumbs { display: inline-flex; gap: 10px; margin-top: 10px; color: #e3f0ff; font-family: 'Nunito', Arial, sans-serif; font-weight: 600; }
 .faq-crumbs a { color: #e3f0ff; text-decoration: none; }
 .faq-crumbs a:hover { text-decoration: underline; }
@@ -114,6 +114,7 @@ nav ul, nav li, nav ul ul, nav ul li {
   font-size: clamp(28px, 4vw, 40px);
   letter-spacing: 0.2px;
   margin: 0;
+  color: #ffffff;
 }
 .acerca-crumbs {
   display: inline-flex;
@@ -260,7 +261,7 @@ nav ul, nav li, nav ul ul, nav ul li {
               radial-gradient(60% 60% at 80% 60%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.0) 70%);
 }
 .landing-hero__content { position: relative; z-index: 1; width: 100%; max-width: 1200px; padding: 44px 16px 52px 16px; text-align: center; }
-.landing-title { font-family: 'Rubik', Arial, sans-serif; font-weight: 800; font-size: clamp(28px, 4.2vw, 42px); margin: 0; }
+.landing-title { font-family: 'Rubik', Arial, sans-serif; font-weight: 800; font-size: clamp(28px, 4.2vw, 42px); margin: 0; color: #ffffff; }
 .landing-crumbs { display: inline-flex; gap: 10px; margin-top: 10px; color: #e3f0ff; font-family: 'Nunito', Arial, sans-serif; font-weight: 600; }
 .landing-crumbs a { color: #e3f0ff; text-decoration: none; }
 .landing-crumbs a:hover { text-decoration: underline; }
@@ -314,7 +315,7 @@ nav ul, nav li, nav ul ul, nav ul li {
               radial-gradient(60% 60% at 80% 60%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.0) 70%);
 }
 .crear-hero__content { position: relative; z-index: 1; width: 100%; max-width: 1100px; padding: 36px 16px 44px 16px; text-align: center; }
-.crear-title { font-family: 'Rubik', Arial, sans-serif; font-weight: 800; font-size: clamp(26px, 4vw, 38px); margin: 0; }
+.crear-title { font-family: 'Rubik', Arial, sans-serif; font-weight: 800; font-size: clamp(26px, 4vw, 38px); margin: 0; color: #ffffff; }
 .crear-crumbs { display: inline-flex; gap: 10px; margin-top: 10px; color: #e3f0ff; font-family: 'Nunito', Arial, sans-serif; font-weight: 600; }
 .crear-crumbs a { color: #e3f0ff; text-decoration: none; }
 .crear-crumbs a:hover { text-decoration: underline; }
@@ -362,6 +363,34 @@ body {
   color: #1a202c;
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+/* Grid responsivo para categorías de ayuda */
+.help-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+/* Tarjetas en estilo caja */
+.help-category-card {
+  background: #ffffff;
+  border: 1px solid #e6edf5;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(13, 42, 77, 0.10);
+  padding: 28px;
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.help-category-card:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(13, 42, 77, 0.14); }
+
+.help-category-card h3 { font-weight: 800; color: var(--brand-text); }
+.help-category-card p { color: #5b6b7e; }
+
+/* Fondo de sección para contraste */
+.help-categories-section { background: #f7f9fc; padding: 24px 0 40px; }
+
+/* Desplazamiento suave y compensación de anclas por navbar fijo */
+html { scroll-behavior: smooth; }
+.anchor-target { scroll-margin-top: 84px; }
 
 /* caret del submenú (Inicio) */
 .navbar-submenu-caret {

@@ -46,7 +46,9 @@ export default function Navbar({ user, setUser }) {
     <nav className="w-full flex items-center justify-between px-10 py-3 bg-white fixed top-0 left-0 z-40 border-b border-[#e6edf5] min-h-[66px]" style={{ zIndex: 2000 }}>
       {/* Logo */}
       <div className="flex items-center gap-6">
-        <img src="/logo-rifatela.svg" alt="Rifatela Logo" className="h-14 md:h-16" style={{ maxHeight: '64px', height: '56px', width: 'auto' }} />
+        <Link to="/" aria-label="Ir al inicio">
+          <img src="/logo-rifatela.svg" alt="Rifatela Logo" className="h-14 md:h-16" style={{ maxHeight: '64px', height: '56px', width: 'auto' }} />
+        </Link>
       </div>
 
       {/* Menú centro */}
@@ -70,36 +72,60 @@ export default function Navbar({ user, setUser }) {
 
         {/* Sistema */}
         <li className="nav-item relative m-0 p-0">
-          <button className="text-[#3f5873] font-semibold transition flex items-center gap-x-1">Sistema <span className="ml-1 text-[11px] align-middle" style={{ color: '#8fa0b5' }}>▼</span></button>
-          <ul className="nav-submenu absolute left-0 top-full pt-3 bg-white border border-gray-100 rounded-xl shadow-lg min-w-[220px] py-2 list-none" style={{ boxShadow: '0 8px 32px 0 rgba(31,38,135,0.10)', zIndex: 3000 }}>
+          <Link to="/sistema" className="text-[#3f5873] font-semibold transition flex items-center gap-x-1">Sistema <span className="ml-1 text-[11px] align-middle" style={{ color: '#8fa0b5' }}>▼</span></Link>
+          <ul className="nav-submenu absolute left-0 top-full pt-3 bg-white border border-gray-100 rounded-xl shadow-lg min-w-[260px] py-2 list-none" style={{ boxShadow: '0 8px 32px 0 rgba(31,38,135,0.10)', zIndex: 3000 }}>
             <span className="navbar-submenu-caret" aria-hidden="true" />
-            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-primary-light text-primary" to="/login">Iniciar Sesión</Link></li>
-            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-primary-light text-primary" to="/registro">Registrarse</Link></li>
-            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-primary-light text-primary" to="/verificador">Verificador de Tickets</Link></li>
-            {user && <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-primary-light text-primary" to="/usuario">Panel Usuario</Link></li>}
-            {user && <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-primary-light text-primary" to="/admin">Panel Admin</Link></li>}
+            {/* Anclas internas */}
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/sistema#web-online">Página Web Online</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/sistema#panel">Panel de Administración</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/sistema#configuraciones">Múltiples Configuraciones</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/sistema#verificador">Verificador de Tickets</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/sistema#plataforma">Plataforma (Resumen)</Link></li>
+            {/* Atajos útiles */}
+            <li className="m-0 p-0 border-t border-gray-100 mt-1 pt-1"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-primary" to="/login">Iniciar Sesión</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-primary" to="/registro">Registrarse</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-primary" to="/verificador">Verificador de Tickets</Link></li>
+            {user && <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-primary" to="/usuario">Panel Usuario</Link></li>}
+            {user && <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-primary" to="/admin">Panel Admin</Link></li>}
           </ul>
         </li>
 
         {/* Beneficios */}
         <li className="nav-item relative m-0 p-0">
-          <button className="text-[#3f5873] font-semibold transition flex items-center gap-x-1">Beneficios <span className="ml-1 text-[11px] align-middle" style={{ color: '#8fa0b5' }}>▼</span></button>
-          <ul className="nav-submenu absolute left-0 top-full pt-3 bg-white border border-gray-100 rounded-xl shadow-lg min-w-[220px] py-2 list-none" style={{ boxShadow: '0 8px 32px 0 rgba(31,38,135,0.10)', zIndex: 3000 }}>
+          <Link to="/beneficios" className="text-[#3f5873] font-semibold transition flex items-center gap-x-1">Beneficios <span className="ml-1 text-[11px] align-middle" style={{ color: '#8fa0b5' }}>▼</span></Link>
+          <ul className="nav-submenu absolute left-0 top-full pt-3 bg-white border border-gray-100 rounded-xl shadow-lg min-w-[260px] py-2 list-none" style={{ boxShadow: '0 8px 32px 0 rgba(31,38,135,0.10)', zIndex: 3000 }}>
             <span className="navbar-submenu-caret" aria-hidden="true" />
-            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-primary-light text-primary" to="/testimonios">Testimonios</Link></li>
-            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-primary-light text-primary" to="/preguntas-frecuentes">Preguntas Frecuentes</Link></li>
+            {/* Anclas internas */}
+            <li className="m-0 p-0"><Link to="/beneficios#sin-comisiones" className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800">Sin Comisiones</Link></li>
+            <li className="m-0 p-0"><Link to="/beneficios#facil" className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800">Fácil de Usar</Link></li>
+            <li className="m-0 p-0"><Link to="/beneficios#automatizado" className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800">Automatizado</Link></li>
+            <li className="m-0 p-0"><Link to="/beneficios#administrable" className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800">Administrable</Link></li>
+            {/* Atajos relacionados */}
+            <li className="m-0 p-0 border-t border-gray-100 mt-1 pt-1"><Link to="/testimonios" className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-primary">Testimonios</Link></li>
+            <li className="m-0 p-0"><Link to="/preguntas-frecuentes" className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-primary">Preguntas Frecuentes</Link></li>
           </ul>
         </li>
 
         {/* Configuraciones */}
         <li className="nav-item relative m-0 p-0">
-          <button className="text-[#3f5873] font-semibold transition flex items-center gap-x-1">Configuraciones <span className="ml-1 text-[11px] align-middle" style={{ color: '#8fa0b5' }}>▼</span></button>
-          <ul className="nav-submenu absolute left-0 top-full pt-3 bg-white border border-gray-100 rounded-xl shadow-lg min-w-[220px] py-2 list-none" style={{ boxShadow: '0 8px 32px 0 rgba(31,38,135,0.10)', zIndex: 3000 }}>
+          <Link to="/configuraciones" className="text-[#3f5873] font-semibold transition flex items-center gap-x-1">Configuraciones <span className="ml-1 text-[11px] align-middle" style={{ color: '#8fa0b5' }}>▼</span></Link>
+          <ul className="nav-submenu absolute left-0 top-full pt-3 bg-white border border-gray-100 rounded-xl shadow-lg min-w-[260px] py-2 list-none" style={{ boxShadow: '0 8px 32px 0 rgba(31,38,135,0.10)', zIndex: 3000 }}>
             <span className="navbar-submenu-caret" aria-hidden="true" />
-            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-primary-light text-primary" to="/contacto">Contacto</Link></li>
-            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-primary-light text-primary" to="/terminos">Términos y Condiciones</Link></li>
-            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-primary-light text-primary" to="/privacidad">Política de Privacidad</Link></li>
-            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-primary-light text-primary" to="/reglas">Reglas</Link></li>
+            {/* Enlaces a anclas internas de /configuraciones */}
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#dominio">Dominio</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#web">Página Web</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#seo">SEO</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#pagos">Pagos</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#panel">Panel de Administración</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#notificaciones">Notificaciones</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#vendedores">Vendedores</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#boletos">Boletos</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#promociones">Promociones</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#reportes">Reportes</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#seguridad">Seguridad</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-gray-800" to="/configuraciones#integraciones">Integraciones</Link></li>
+            <li className="m-0 p-0 border-t border-gray-100 mt-1 pt-1"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-primary" to="/terminos">Términos y Condiciones</Link></li>
+            <li className="m-0 p-0"><Link className="block w-full text-left px-5 py-2 hover:bg-blue-50 text-primary" to="/privacidad">Política de Privacidad</Link></li>
           </ul>
         </li>
 

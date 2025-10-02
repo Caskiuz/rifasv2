@@ -9,9 +9,9 @@ export default function Bienvenida() {
           ¡Bienvenido a Rifatela!
         </div>
         <div className="rifarito-bienvenida__desc">
-          La plataforma más fácil, segura y transparente para crear y gestionar
-          rifas en línea. Únete a miles de usuarios que ya confían en nosotros
-          para organizar sus sorteos de manera profesional y sin complicaciones.
+          La plataforma más sencilla, confiable y clara para crear y administrar
+          rifas en línea. Súmate a miles de usuarios que ya confían en nosotros
+          para organizar sus sorteos de forma profesional y sin enredos.
         </div>
       </div>
     </section>

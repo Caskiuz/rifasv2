@@ -23,9 +23,13 @@ import ClientesDestacados from './components/ClientesDestacados';
 import CrearPagina from './components/CrearPagina';
 import CentroAyuda from './components/CentroAyuda';
 import ArticuloAyuda from './components/ArticuloAyuda';
+import CategoriaAyuda from './components/CategoriaAyuda';
 import NotFound from './components/NotFound';
 import Home from './pages/Home';
 import SuscripcionFooter from './components/SuscripcionFooter';
+import SistemaPage from './components/SistemaPage';
+import BeneficiosPage from './components/BeneficiosPage';
+import Configuraciones from './components/Configuraciones';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -47,9 +51,13 @@ function App() {
           <Route path="/acerca" element={<Acerca />} />
           <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
           <Route path="/demos" element={<DemosDisponibles />} />
+          <Route path="/sistema" element={<SistemaPage />} />
+          <Route path="/beneficios" element={<BeneficiosPage />} />
+          <Route path="/configuraciones" element={<Configuraciones />} />
           <Route path="/clientes" element={<ClientesDestacados />} />
           <Route path="/crear-pagina" element={<CrearPagina />} />
           <Route path="/centro-ayuda" element={<CentroAyuda />} />
+          <Route path="/centro-ayuda/categoria/:key" element={<CategoriaAyuda />} />
           <Route path="/centro-ayuda/:slug" element={<ArticuloAyuda />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/login" element={<Login onLogin={setUser} />} />

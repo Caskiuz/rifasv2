@@ -127,7 +127,7 @@ export default function PreguntasFrecuentes() {
 						<span className="dot">•</span>
 						<span>RIFATELA</span>
 						<span className="dot">•</span>
-						<span>Preguntas Frecuentes</span>
+						<span>FAQ</span>
 					</div>
 				</div>
 			</section>

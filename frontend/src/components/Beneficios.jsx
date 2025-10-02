@@ -8,7 +8,7 @@ export default function BeneficiosBienvenida() {
       <div className="rifarito-beneficios-bienvenida__container" style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
         {/* Cuadros de beneficios (lado izquierdo) */}
         <div className="rifarito-beneficios-grid" style={{flex:'1 1 0%'}}>
-          <Link to="/preguntas-frecuentes" className="rifarito-beneficio-card rifarito-beneficio-card--azul">
+          <a href="#sin-comisiones" id="sin-comisiones" className="rifarito-beneficio-card rifarito-beneficio-card--azul anchor-target" style={{textDecoration:'none'}}>
             <div className="rifarito-beneficio-card__icon">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                 <circle cx="24" cy="24" r="24" fill="#153e75" />
@@ -24,8 +24,8 @@ export default function BeneficiosBienvenida() {
             <div className="rifarito-beneficio-card__desc">
               Todos los pagos van directo hacia sus cuentas...
             </div>
-          </Link>
-          <Link to="/preguntas-frecuentes" className="rifarito-beneficio-card">
+          </a>
+          <a href="#facil" id="facil" className="rifarito-beneficio-card anchor-target" style={{textDecoration:'none'}}>
             <div className="rifarito-beneficio-card__icon">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                 <circle cx="24" cy="24" r="24" fill="#E3F0FF" />
@@ -41,8 +41,8 @@ export default function BeneficiosBienvenida() {
             <div className="rifarito-beneficio-card__desc">
               Landing Page y Panel con una interfaz amigable...
             </div>
-          </Link>
-          <Link to="/preguntas-frecuentes" className="rifarito-beneficio-card">
+          </a>
+          <a href="#automatizado" id="automatizado" className="rifarito-beneficio-card anchor-target" style={{textDecoration:'none'}}>
             <div className="rifarito-beneficio-card__icon">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                 <circle cx="24" cy="24" r="24" fill="#E3F0FF" />
@@ -58,8 +58,8 @@ export default function BeneficiosBienvenida() {
             <div className="rifarito-beneficio-card__desc">
               Tus clientes elegirán sus números y enviarán su voucher...
             </div>
-          </Link>
-          <Link to="/preguntas-frecuentes" className="rifarito-beneficio-card rifarito-beneficio-card--azul">
+          </a>
+          <a href="#administrable" id="administrable" className="rifarito-beneficio-card rifarito-beneficio-card--azul anchor-target" style={{textDecoration:'none'}}>
             <div className="rifarito-beneficio-card__icon">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                 <circle cx="24" cy="24" r="24" fill="#153e75" />
@@ -75,7 +75,7 @@ export default function BeneficiosBienvenida() {
             <div className="rifarito-beneficio-card__desc">
               Puedes gestionar los tickets y ver las estadísticas...
             </div>
-          </Link>
+          </a>
         </div>
         {/* Bienvenida (lado derecho) y Apple Watch */}
         <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', flex:'1 1 0%', gap:'24px'}}>

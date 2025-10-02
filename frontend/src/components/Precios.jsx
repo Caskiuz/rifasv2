@@ -5,23 +5,23 @@ const planes = [
   {
     plan: "Básico",
     precio: "Gratis",
-    desc: "Crea y gestiona rifas ilimitadas sin costo. Ideal para comenzar y probar Rifatela.",
+    desc: "Crea y administra rifas ilimitadas sin costo. Perfecto para empezar y conocer Rifatela.",
     destacado: false,
-    btn: "Comenzar",
+    btn: "Empezar",
   },
   {
-    plan: "Pro",
+    plan: "Premium",
     precio: "$199 MXN/mes",
-    desc: "Funciones avanzadas, soporte prioritario y mayor personalización para tus rifas.",
+    desc: "Funciones avanzadas, atención prioritaria y más opciones de personalización.",
     destacado: true,
-    btn: "Probar Pro",
+    btn: "Probar plan Premium",
   },
   {
-    plan: "Empresas",
+    plan: "Empresarial",
     precio: "A consultar",
-    desc: "Soluciones a medida para organizaciones y grandes sorteos. Contáctanos para una propuesta personalizada.",
+    desc: "Soluciones a medida para organizaciones y grandes sorteos. Contáctanos para una propuesta a tu medida.",
     destacado: false,
-    btn: "Contactar",
+    btn: "Contactarnos",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function Precios() {
               <div className="rifarito-precio-card__plan">{p.plan}</div>
               <div className="rifarito-precio-card__precio">{p.precio}</div>
               <div className="rifarito-precio-card__desc">{p.desc}</div>
-              <button className="rifarito-precio-card__btn">{p.btn}</button>
+              <button className="rifarito-precio-card__btn btn-gradient" style={{borderRadius:'9999px'}}>{p.btn}</button>
             </div>
           ))}
         </div>

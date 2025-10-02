@@ -13,15 +13,15 @@ export default function Hero() {
       <div className="rifarito-hero__container">
         <div className="rifarito-hero__left">
           <h1 className="rifarito-hero__title">
-            Sistema de <br />RifasOnline
+            Plataforma de <br />Rifas en Línea
             <Underline />
           </h1>
           <div className="rifarito-hero__desc">
-            Vende tickets por Internet en nuestra plataforma digital de <b>sorteos online</b> con números de la lotería y <b>boletos virtuales</b>.
+            Vende boletos en línea con nuestra plataforma para <b>sorteos</b>: números de lotería y <b>tickets digitales</b>.
           </div>
           <div className="rifarito-hero__actions">
-            <a href="/landing/" className="btn-gradient">VER DEMOS</a>
-            <a href="/premium/#pricing" className="btn-gradient">VER PRECIOS</a>
+            <a href="/landing/" className="btn-gradient">Explorar demos</a>
+            <a href="/premium/#pricing" className="btn-gradient">Ver tarifas</a>
           </div>
         </div>
       </div>
